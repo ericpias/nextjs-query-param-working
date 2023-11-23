@@ -17,7 +17,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
   return { props: { host } };
 };
 
-export default function Home({ host }) {
+export default function Home({ host }: any) {
   const router = useRouter();
   // get testParam
 
