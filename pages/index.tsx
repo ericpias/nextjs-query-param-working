@@ -30,7 +30,10 @@ export default function Home() {
           <div>testParam is a string: {testParam}</div>
         )}
         {!testParam && (
-          <div>testParam: not set (hit set it twice to seet bug)</div>
+          <div>
+            testParam: not set (hint set it twice to see the bug when deploy in
+            netlify)
+          </div>
         )}
       </main>
     </>
