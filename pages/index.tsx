@@ -9,7 +9,8 @@ export default function Home() {
   const { _locale, _id, _cid, _slug, ...parsedQueryParams } = parseQueryParams(
     router.query
   ) as any;
-  const { testParam } = parsedQueryParams;
+  const { _junk, ...parsedParams } = parsedQueryParams;
+  const { testParam } = parsedParams;
 
   return (
     <>
