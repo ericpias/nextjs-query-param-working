@@ -3,7 +3,21 @@ import { useRouter } from "next/router";
 import parseQueryParams from "@/utils/queryParams";
 import MyComponent from "@/utils/MyComponent";
 
-export default function Home() {
+import type { GetServerSideProps } from "next";
+
+type Props = {
+  host: string;
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+  req,
+}) => {
+  const host = req.headers.host || "";
+
+  return { props: { host } };
+};
+
+export default function Home({ host }) {
   const router = useRouter();
   // get testParam
 
