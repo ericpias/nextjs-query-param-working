@@ -1,10 +1,15 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import parseQueryParams from "@/utils/queryParams";
 
 export default function Home() {
   const router = useRouter();
   // get testParam
-  const { testParam } = router.query;
+
+  const { _locale, _id, _cid, _slug, ...parsedQueryParams } = parseQueryParams(
+    router.query
+  ) as any;
+  const { testParam } = parsedQueryParams;
 
   return (
     <>
