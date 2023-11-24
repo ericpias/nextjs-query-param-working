@@ -1,16 +1,23 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import MyComponent from "@/utils/MyComponent";
 
 import type { GetServerSideProps } from "next";
 
-export const getServerSideProps: GetServerSideProps<any> = async (context) => {
-  return { props: {} };
+type Props = {
+  query?: any;
 };
 
-export default function Home() {
-  const router = useRouter();
-  const { testParam } = router.query;
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+  query,
+}) => {
+  return { props: { query } };
+};
+
+export default function Home({ query }: Props) {
+  // const router = useRouter();
+  // const { testParam } = router.query;
+  const { testParam } = query;
 
   return (
     <>
