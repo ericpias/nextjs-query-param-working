@@ -1,14 +1,12 @@
-"use client";
-
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const MyComponent = () => {
-  // const [doNothing, setDoNothing] = useState(false);
+  const [doNothing, setDoNothing] = useState(false);
 
-  // useEffect(() => {
-  //   setDoNothing(true);
-  // }, []);
+  useEffect(() => {
+    setDoNothing(true);
+  }, []);
 
   const router = useRouter();
   const { testParam } = router.query;
