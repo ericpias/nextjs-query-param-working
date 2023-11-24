@@ -21,7 +21,7 @@ const MyComponent = () => {
         </div>
       )}
       {testParam && !Array.isArray(testParam) && (
-        <div>(SClient Component) testParam is a string: {testParam}</div>
+        <div>(Client Component) testParam is a string: {testParam}</div>
       )}
     </>
   );
